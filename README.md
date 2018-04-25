@@ -1,11 +1,7 @@
-# mongodb & [parse-server](http://parseplatform.org/) & [parse-dashboard](https://github.com/parse-community/parse-dashboard)
 
-> Work in progress, testing...
 
-## Config(s)
+## Google Project: delivery-tracker-1523842970758
 
-Check the `docker-compose.yml` to change the `APP_ID` and the `MASTER_KEY` for the `parse-server`.
-Then, make sure to connect the `parse-dashboard` checking the `parse-dashboard/config.json` and fix the configuration properly.
 
 ## APNS and GCM for Push Notifications
 You may want to send Push Notifications with the Parse server, you must configure GCM and APNS.
@@ -20,7 +16,7 @@ ADD ./path-to-certificate.p12 ${PARSE_HOME}
 
 ## First run
 
-    $ git clone https://github.com/LasaleFamine/docker-mongo-parse-server mongo-parse-server
+    $ git clone https://git@github.com:trung85/docker-mongo-parse-server.git mongo-parse-server
     $ cd mongo-parse-server
     $ docker-compose up # add -d for `demon` mode
 
@@ -28,6 +24,30 @@ ADD ./path-to-certificate.p12 ${PARSE_HOME}
 
     $ docker-compose build
 
-## License
+## Test Parse Server
 
-MIT © LasaleFamine
+```
+POST
+curl -X POST \
+-H "X-Parse-Application-Id: ADXUM1FFKTHI9RMOEKUXUOAGU7RJIY" \
+-H "Content-Type: application/json" \
+-d '{"score":1337,"playerName":"Sean Plott","cheatMode":false}' \
+http://localhost:1337/parse/classes/GameScore
+
+GET
+curl -X GET \
+-H "X-Parse-Application-Id: ADXUM1FFKTHI9RMOEKUXUOAGU7RJIY" \
+-H "Content-Type: application/json" \
+-d '{}' \
+http://localhost:1337/parse/classes/GameScore
+
+```
+
+## Install brew
+
+```
+$ gcc --version
+$ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+$ brew doctor
+$ brew update
+```

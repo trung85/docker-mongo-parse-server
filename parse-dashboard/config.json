@@ -2,9 +2,9 @@
   "apps": [
     {
       "serverURL": "http://localhost:1337/parse",
-      "appId": "something_nice_and_secret",
-      "masterKey": "long-secret-awesome",
-      "appName": "MyApp"
+      "appId": "ADXUM1FFKTHI9RMOEKUXUOAGU7RJIY",
+      "masterKey": "6B:7E:13:C2:78:EB:D0:35:70:99:2E:06",
+      "appName": "Delivery Tracker App"
     }
   ],
   "users": [
